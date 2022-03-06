@@ -1,8 +1,8 @@
 from person import Person
 
 class Teacher(Person):
-    def __init__(self, specialization, **kwargs) -> None:
-        super().__init__(**kwargs)
+    def __init__(self, specialization, *args, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
         self.__specialization = specialization
         
     @property

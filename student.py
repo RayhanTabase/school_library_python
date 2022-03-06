@@ -1,8 +1,8 @@
 
 from person import Person
 class Student(Person):
-  def __init__(self, **kwargs):
-      super().__init__(**kwargs)
+  def __init__(self, *args, **kwargs):
+      super().__init__(*args, **kwargs)
       self.__classroom = None
         
   def play_hooky(self):

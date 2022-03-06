@@ -19,10 +19,11 @@ class Library:
   def list_all_people(self):
     count = 1
     for person in self.__people:
-      print(f"{count}) Name: {person.name}, ID: {person.id}, Age: {person.age}")
+      print(f"{count}) [{type(person).__name__}] Name: {person.name}, ID: {person.id}, Age: {person.age}")
       count += 1
       
-  def list_rentals_for_id(self, id):
+  def list_rentals_for_id(self):
+    id = Inputs.input_number('Input id', int)
     for rental in self.__rentals:
       if rental.person.id == id:
         print(f"Date: {rental.date} , Book: {rental.book.title} by {rental.book.author}")
@@ -69,12 +70,12 @@ class Library:
       return
     print('Select a book from the following list of numbers')
     self.list_all_books()
-    book_index = Inputs.input_number_range(1, len(self.__books))
-    book = self.__books[book_index]
+    book_index = Inputs.input_number_range(' ', int, 1, len(self.__books))
+    book = self.__books[book_index-1]
     print('Select a person from the following list of numbers (not_id)')
     self.list_all_people()
-    person_index = Inputs.input_number_range(1, len(self.__people))
-    person = self.__people[person_index]
+    person_index = Inputs.input_number_range(' ', int, 1, len(self.__people))
+    person = self.__people[person_index-1]
     date = Inputs.input_string('Date', 4, 30)
     new_rental = Rental(person, book, date)
     print('Rental created successfully')

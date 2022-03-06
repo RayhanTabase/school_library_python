@@ -3,9 +3,6 @@ class Book:
     self.__title = title
     self.__author = author
     self.__rentals = []
-    
-  def add_rental(self, rental):
-    self.rentals.append(rental)
   
   @property
   def title(self):
@@ -19,5 +16,5 @@ class Book:
   def rentals(self):
     return self.__rentals
   
-  def add_rentals(self, rental):
-    self.__rentals.push(rental)
+  def add_rental(self, rental):
+    self.__rentals.append(rental)

@@ -11,3 +11,4 @@ while True:
   if option == 7:
     break
   program.display_sub_menu(option)
+  input('Press enter to continue')

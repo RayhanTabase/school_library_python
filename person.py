@@ -37,9 +37,8 @@ class Person:
   def age(self, age):
     self.__age = age
   
-  def add_rentals(self, rental):
-    self.__rentals.push(rental)
-    
+  def add_rental(self, rental):
+    self.__rentals.append(rental)
     
   def validate_name(self):
     self.__name = self.corrector.correct_name(self.__name)
