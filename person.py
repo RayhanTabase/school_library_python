@@ -9,6 +9,7 @@ class Person:
       self.__age = age
       self.__parent_permission = parent_permission
       self.corrector = Corrector()
+      self.__rentals = []
       
   def __is_of_age(self):
     return self.__age >= 18
@@ -35,6 +36,10 @@ class Person:
   @age.setter
   def age(self, age):
     self.__age = age
+  
+  def add_rentals(self, rental):
+    self.__rentals.push(rental)
+    
     
   def validate_name(self):
     self.__name = self.corrector.correct_name(self.__name)

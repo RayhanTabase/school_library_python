@@ -19,7 +19,5 @@ class Book:
   def rentals(self):
     return self.__rentals
   
-  
-  @age.setter
-  def age(self, age):
-    self.age = age
+  def add_rentals(self, rental):
+    self.__rentals.push(rental)
